@@ -23,13 +23,20 @@ describe('AppComponent', () => {
   it(`should have as title 'JasmineTestCases'`, () => {
     const fixture = TestBed.createComponent(AppComponent);
     const app = fixture.componentInstance;
-    expect(app.title).toEqual('JasmineTestCases');
+    expect(app.title).toEqual('JasmineTestCases1');
   });
 
   it('should render title', () => {
     const fixture = TestBed.createComponent(AppComponent);
     fixture.detectChanges();
     const compiled = fixture.nativeElement as HTMLElement;
-    expect(compiled.querySelector('.content span')?.textContent).toContain('JasmineTestCases app is running!');
+    expect(compiled.querySelector('span')?.textContent).toEqual("JasmineTestCases1");
   });
+
+  it('say hello',()=>{
+    const fixture = TestBed.createComponent(AppComponent);
+    const app = fixture.componentInstance;
+    expect(app.helloWorld()).toEqual('Hello World');
+  })
+
 });
